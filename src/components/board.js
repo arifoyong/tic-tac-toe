@@ -34,25 +34,25 @@ class Board extends Component {
         if (winner) {
             status = 'Winner: ' + winner;
         } else {
-            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+            status = 'The next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
         return(
             <div>
                 <div className="status">{status}</div>
                 <div className="board-row">
+                    {this.renderSquare(0)}
                     {this.renderSquare(1)}
                     {this.renderSquare(2)}
-                    {this.renderSquare(3)}
                 </div>
                 <div className="board-row">
+                    {this.renderSquare(3)}
                     {this.renderSquare(4)}
                     {this.renderSquare(5)}
-                    {this.renderSquare(6)}
                 </div>
                 <div className="board-row">
+                    {this.renderSquare(6)}
                     {this.renderSquare(7)}
                     {this.renderSquare(8)}
-                    {this.renderSquare(9)}
                 </div>
                 
       
@@ -64,6 +64,7 @@ class Board extends Component {
 export default Board;
 
 function calculateWinner(squares) {
+    console.log(squares)
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
