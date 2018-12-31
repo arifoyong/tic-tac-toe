@@ -1,6 +1,6 @@
 #STEP 1 ================================================
 #base image
-FROM node:9.6.1 as builder
+FROM node:8 as node_image
 
 #set working directory
 RUN mkdir /usr/src/app
@@ -15,5 +15,6 @@ COPY . /usr/src/app
 #RUN npm install react-scripts@1.1.1 -g
 
 # start app
-CMD ["npm", "start"]
+#CMD ["npm", "start"]
+EXPOSE 3000
 #==========================================================
