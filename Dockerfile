@@ -12,7 +12,7 @@ RUN npm install
 
 #COPY . ./
 COPY . /usr/src/app
-#RUN npm install react-scripts@1.1.1 -g
+RUN npm install react-scripts@1.1.1 -g
 
 # start app
 #CMD ["npm", "start"]
