@@ -11,7 +11,7 @@ COPY package.json /usr/src/app/package.json
 RUN npm install
 
 #COPY . ./
-COPY . /usr/src/app
+COPY . ./
 RUN npm install react-scripts@1.1.1 -g
 
 # start app
