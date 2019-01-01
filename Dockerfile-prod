@@ -1,6 +1,6 @@
 #STEP 1 ================================================
 #base image
-FROM node:9.6.1 as builder
+FROM node:9 as builder
 
 #set working directory
 RUN mkdir /usr/src/app
