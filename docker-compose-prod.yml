@@ -2,7 +2,7 @@ version: '2'
 
 services:
   tic-tac-toe:
-    #container_name: tic-tac-toe
+    container_name: tic-tac-toe
     build:
       context: .
       dockerfile: Dockerfile-prod
