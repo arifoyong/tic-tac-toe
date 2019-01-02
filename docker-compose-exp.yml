@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  tic-tac-toe:
+    container_name: tic-tac-toe
+    build:
+      context: .
+      dockerfile: Docker-file-exp
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    #command: npm start
+    ports:
+      - '3001:3001'
+    environment:
+      - NODE_ENV=production
