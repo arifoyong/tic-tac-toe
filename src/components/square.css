@@ -2,12 +2,19 @@
   width: 100px;
   height: 100px;
   padding: 5px;
-  background: #303030;
-  border: black solid 1px;
-  color: white;
-  font-size: 50px;
-  text-align: center;
   margin: 10px;
+  background: #303030;
+  border:#303030 1px;
+  font-size: 80px;
+  text-align: center;
+}
+
+.valueIsX {
+  color: yellow;
+}
+
+.valueIsO {
+  color: fuchsia;
 }
 
 @media screen and (min-width: 768px) {
@@ -17,3 +24,4 @@
   }
 
 }
+

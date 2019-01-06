@@ -1,7 +1,7 @@
 .game {
     background: black;
-    width: 100vmin;
-    height: 100vmax;
+    width: 100vw;
+    height: 100vh;
   }
   
 .status { 
@@ -23,3 +23,11 @@
       margin-bottom: 40px;
     }
   }
+
+  /* @media screen and (orientation: landscape) {
+    .game {
+        width: 100vh;
+        height: 100vw;
+        background: #999;
+      }
+  } */
