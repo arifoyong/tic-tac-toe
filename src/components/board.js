@@ -16,7 +16,7 @@ class Board extends Component {
     handleClick(i) {
         const squares = this.state.squares.slice();
         
-        if (calculateWinner(squares) ) {
+        if (calculateWinner(squares) || this.state.squares.every((val) => {return val!==null})) {
             this.setState({squares: Array(9).fill(null), xIsNext: true});
             return;
         }
