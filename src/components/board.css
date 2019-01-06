@@ -1,7 +1,7 @@
 .game {
     background: black;
-    width: 100vw;
-    height: 100vh;
+    width: 100vmin;
+    height: 100vmax;
   }
   
 .status { 
