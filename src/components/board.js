@@ -15,11 +15,18 @@ class Board extends Component {
 
     handleClick(i) {
         const squares = this.state.squares.slice();
-        if (calculateWinner(squares) || squares[i]) {
+        
+        if (calculateWinner(squares) ) {
+            this.setState({squares: Array(9).fill(null), xIsNext: true});
             return;
-          }
-        squares[i] = this.state.xIsNext ? 'x' : 'o'
-        this.setState({squares: squares, xIsNext: !this.state.xIsNext}, console.log(this.state.squares));
+        }
+
+        if (squares[i] ) {
+            return;
+        }
+
+        squares[i] = this.state.xIsNext ? 'X' : 'O';
+        this.setState({squares: squares, xIsNext: !this.state.xIsNext});
     }
 
     renderSquare(i) {
@@ -37,25 +44,28 @@ class Board extends Component {
             status = 'The next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
         return(
-            <div>
+            <div className="game">
                 <div className="status">{status}</div>
-                <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>
-                
-      
+                <table className="board">
+                    <tbody>
+                    <tr className="board-row">
+                        {this.renderSquare(0)}
+                        {this.renderSquare(1)}
+                        {this.renderSquare(2)}
+                    </tr>
+                    <tr className="board-row">
+                        {this.renderSquare(3)}
+                        {this.renderSquare(4)}
+                        {this.renderSquare(5)}
+                    </tr>
+                    <tr className="board-row">
+                        {this.renderSquare(6)}
+                        {this.renderSquare(7)}
+                        {this.renderSquare(8)}
+                    </tr>
+                    </tbody>
+                </table>
+
             </div>
         );
     }
@@ -64,7 +74,6 @@ class Board extends Component {
 export default Board;
 
 function calculateWinner(squares) {
-    // console.log(squares)
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
